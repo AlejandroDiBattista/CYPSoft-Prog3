@@ -1,0 +1,7 @@
+{
+    "type": "module",
+    "dependencies": {
+        "ntp-client": "^0.5.3",
+        "ntp-time": "^2.0.4"
+    }
+}
