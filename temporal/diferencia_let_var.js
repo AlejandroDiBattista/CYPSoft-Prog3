@@ -1,4 +1,4 @@
-const l = (...a) => console.log(a.join(' '))
+function l(...a) { console.log(a.join(' ')) }
 
 // Alcance de una variable
 let x = 10

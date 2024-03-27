@@ -45,7 +45,7 @@ function comenzar(titulo='Demostración') {
     const { nombre } = extraerLlamada()
     lineas = leerLineas(nombre)
     console.clear()
-    console.log([chalk.bold.red(centrar(titulo))])
+    console.log(chalk.bold.red(centrar(titulo)))
 }
 
 function seccion(titulo) {
