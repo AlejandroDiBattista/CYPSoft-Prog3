@@ -10,13 +10,12 @@ const url = "https://jsonapi.org/"
 // Consola
 var respuesta = await fetch(url, { "method": "GET", "headers": { "accept": "text/html" } })
 var texto = await respuesta.text()
-console.log(texto)
+// console.log(texto.slice(1,1000))
 
 
 dns.resolve4('www.jsonapi.org', (err, addresses) => {
-    console.log(`Direcciones IP de 'www.jsonapi.org' es: \n\t${JSON.stringify(addresses)}`);
+    // console.log(`Direcciones IP de 'www.jsonapi.org' es: \n\t${JSON.stringify(addresses)}`);
 });
-
 
 
 ntpClient.getNetworkTime("pool.ntp.org", 123, function (err, date) {
