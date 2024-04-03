@@ -1,4 +1,4 @@
-const {comenzar, seccion, ver, terminar, v=ver } = require('./utils.js')
+const {comenzar, seccion, ver, terminar, v=ver } = require('../utils.js')
 
 comenzar("Tipo primitivos", true)
 

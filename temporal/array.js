@@ -1,4 +1,4 @@
-import { comenzar, seccion, ver, terminar } from './utils.js';
+import { comenzar, seccion, ver, terminar } from '../utils.js';
 
 comenzar("Demostración de Array")
 ///-- Demostración de Array --///
