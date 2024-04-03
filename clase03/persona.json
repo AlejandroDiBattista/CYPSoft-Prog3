@@ -1,0 +1,5 @@
+[
+  {"nombre": "Juan", "telefono": 343434},
+  {"nombre": "Maria", "telefono": 454545, "edad": 20},
+  {"nombre": "Jose", "edad": 20}
+]

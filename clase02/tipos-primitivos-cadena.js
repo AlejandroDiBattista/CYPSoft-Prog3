@@ -1,4 +1,4 @@
-import { comenzar, seccion, ver, terminar } from './utils.js';
+import { comenzar, seccion, ver, terminar } from '../utils.js';
 
 comenzar("Tipos primitivos | Cadenas");
 
@@ -9,7 +9,7 @@ let c = "Hola"
 
 seccion("Literal")
 
-ver(c = "Comillas Dobles")
+ver(c = "Comillas Dobles")  
 ver(c = 'Comillas Simples')
 ver(c = 'Comillas Simples')
 ver(c = `Comillas Invertidas`)
@@ -26,4 +26,4 @@ ver(a + b)      // suma
 ver(a - b)      // resta (no definida)
 
 
-terminar('literal');
+terminar(true);
