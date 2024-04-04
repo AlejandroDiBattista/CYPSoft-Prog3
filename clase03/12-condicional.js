@@ -17,9 +17,9 @@ if(a < b) {
   min = b;
 }
 
-c = 5;
+let c = 5;
 // Menor entre a, b, c
-if( a < b){
+if(a < b){
   if(a < c){
     min = a
   } else {
@@ -56,5 +56,3 @@ if(nota < 4) {
   calificacion = "promociono"
 }
 calificacion
-
-

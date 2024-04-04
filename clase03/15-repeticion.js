@@ -23,17 +23,25 @@ for(let i = 0; i < 10; i++){
 }
 
 let lista = [10, 20, 30, 40, 50]
+
 suma = 0
-for(let i = 0; i < lista.length; i++){
+for(let i = 0; i < lista.length; i++){ 
   x = lista[i]
   suma += x
 }
 suma
 
-for(let i = 0; i < lista.length; i++){
+for(let i = 0; i < lista.length; i++){ 
   x = lista[i]
   console.log(`${i} = ${lista[i]}`)
 }
+
+// Recorrer una array 
+for(let i = 0; i < lista.length; i++){  // for(let x of lista){
+  x = lista[i]
+  // procesar(x)                        //   procesar(x)
+}                                       // }
+
 
 suma = 0
 for(let x of lista){
@@ -41,9 +49,5 @@ for(let x of lista){
 }
 
 for(let x of lista){
-  console.log(x)
-}
-
-for(let x in lista){
   console.log(x)
 }

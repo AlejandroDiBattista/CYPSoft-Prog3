@@ -73,3 +73,8 @@ suma
 
 let r = numeros.filter(x => x % 2==0).map(x => x*2).reduce((s,x) => s+x, 0)
 r
+const esPar = x => x % 2 == 0
+const doble = x => x * 2
+const sumar = (s,x) => s+x;
+
+r = numeros.filter(esPar).map(doble).reduce(suma);
