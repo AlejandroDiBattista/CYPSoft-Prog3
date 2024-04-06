@@ -20,14 +20,14 @@ const espacios = (texto) =>
 
 const extraerCodigo = (linea) => {
     const dentro = /^\s*\w+\((?<codigo>.*?)\)[ ;]*\s*(?<comentario>\/\/.*)?\s*$/;
-    const antes = /^\s*(?<codigo>.*?)[ ;]*\s*(?<comentario>\/\/.*)?\s*$/;
+    const antes  = /^\s*(?<codigo>.*?)[ ;]*\s*(?<comentario>\/\/.*)?\s*$/;
     const coincidencias = linea.match(dentro) ?? linea.match(antes) 
     const { groups: { codigo, comentario } } = coincidencias ?? { groups: { codigo: '', comentario: '' } }
     return { codigo, comentario }
 }
 
 const extraerLlamada = (nivel = 3) => {
-    const e = (new Error()).stack.split('\n')[nivel].split(/[:]/)
+    const e = new Error().stack.split('\n')[nivel].split(/[:]/)
     let [nombre, numero] = e.slice(-3, -1)
     numero = parseInt(numero)
     return { nombre, numero }
@@ -37,23 +37,31 @@ let lineas = []
 const leerLineas = (origen) => fs.readFileSync(origen, 'utf8').split('\r\n');
 
 let secciones = []
-const agregar = (linea) => secciones.at(-1).push(linea)
+const agregar = (linea) => {
+    if (seccion.length) {
+        secciones.at(-1).push(linea)
+    } else {
+        console.log(linea)
+    }
+}
 
 /// API ///
 
-function comenzar(titulo='Demostración') {
-    const { nombre } = extraerLlamada()
+function comenzar(titulo = 'Demostración', nivel=3) {
+    const { nombre } = extraerLlamada(nivel)
     lineas = leerLineas(nombre)
     console.clear()
     console.log(chalk.bold.red(centrar(titulo)))
 }
 
-function seccion(titulo) {
+function seccion(titulo="") {
     secciones.push([])
     agregar(chalk.red(`\n\n~~~ ${titulo} ~~~`))
 }
 
 function ver(expresion) {
+    comenzar("",4)
+
     const conExpresion = arguments.length > 0
     const { numero } = extraerLlamada()
     const linea = lineas[numero - (conExpresion ? 1 : 2)]
@@ -70,13 +78,15 @@ function ver(expresion) {
     if (conExpresion) {
         let texto = expresion 
         if (typeof expresion === 'undefined') texto = 'undefined'
-        if (typeof expresion === 'string') texto = `"${expresion}"`
-        if (typeof expresion === 'function') texto = 'function'
+        if (typeof expresion === 'string')    texto = `"${expresion}"`
+        if (typeof expresion === 'function')  texto = 'function'
         if (typeof expresion === 'object' && expresion !== null) texto = JSON.stringify(expresion)
 
         let tipo = Array.isArray(expresion) ? `[${typeof expresion[0]}]` : typeof expresion
         agregar(chalk.gray(PROMPT) + chalk.yellow(`${rellenar(texto, ANCHO - PROMPT.length - 9)} `) + chalk.gray(SEPARADOR + tipo))
     }
+
+
 }   
 
 function terminar(mostrar = -1) {
@@ -97,4 +107,4 @@ function terminar(mostrar = -1) {
     console.log(chalk.red('\n||')) 
 }
 
-export { comenzar, seccion, ver, terminar }
+export { comenzar, seccion, ver, terminar, ver as v, terminar as fin }

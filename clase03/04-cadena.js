@@ -1,9 +1,7 @@
 
-
 // Tipo String (cadenas de caracteres)
 
 let a = "Nombre";
-
 
 a
 typeof a 
@@ -24,7 +22,7 @@ en varias líneas`
 a = `1 + 2 = ${1+2}`
 
 // Operaciones
-a = "uno" + " " + "dos" // Contatenar 
+a = "uno" + " " + "dos" // Concatenar 
 a = "uno" > "dos"
 a = "UNO" > "uno"
 a = "uno" != "UNO"
@@ -48,5 +46,7 @@ a = String(10)
 
 a = "Hola"
 a.length
+a.length = 2
+a
 
 a = [..."Hola"]

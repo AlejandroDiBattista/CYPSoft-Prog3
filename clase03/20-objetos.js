@@ -1,11 +1,12 @@
 const l = console.info 
 
-function Persona(n,a){
-    this.nombre = n
-    this.apellido = a
+function Persona(nombre,apellido){
+    this.nombre = nombre
+    this.apellido = apellido
+    this.nombreCompleto = function () { return `> ${this.apellido}, ${this.nombre}` }
 }
 
-Persona.prototype.nombreCompleto = function(){ return `> ${this.apellido}, ${this.nombre}`}
+// Persona.prototype.nombreCompleto = function(){ return `> ${this.apellido}, ${this.nombre}`}
 
 let p1 = new Persona('Alejandro','Di Battista')
 l(p1.nombre)// let a = [1, 2, 3, 2, 1]
