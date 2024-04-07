@@ -1,38 +1,35 @@
-import fs from 'fs'
-import { exec } from 'child_process'
+import fs from 'fs';
+import { exec } from 'child_process';
 
-let origen = process.argv[2] 
-let temporal = origen.replace('.js', '.tmp.js')
-
-let leer = (origen) => fs.readFileSync(origen, 'utf8').split(/\r\n|\n|\r/) 
-let escribir = (destino, lineas) => fs.writeFileSync(destino, lineas.join('\r\n'), 'utf8') 
-
-let rellenar = (origen, largo) => origen + (largo > origen.length ? ' '.repeat(largo - origen.length) : '')
-
-let convertir = (linea, nro) => {
-    let i = linea.indexOf('//>')
-    let codigo = linea.slice(0, i).trim()
-    return i < 0 ? linea : `console.log('${nro}#', JSON.stringify(${codigo}))` 
+let ancho = 40
+const leer = origen => fs.readFileSync(origen, 'utf8').split(/\r\n|\n|\r/);
+const escribir = (destino, lineas) => fs.writeFileSync(destino, lineas.join('\r\n'), 'utf8');
+const borrar = origen => fs.unlinkSync(origen);
+const convertir = (linea, nro) => {
+    let i = linea.indexOf('//>');
+    if(i > ancho) ancho = i - 1;
+    return i < 0 ? linea : `console.log('${nro}#', JSON.stringify(${linea.slice(0, i).trim()}))`;
 }
-
-let revertir = (lineas, resultado, borrar = false) => {
-    let [nro, res] = resultado.split('#')
+const revertir = (lineas, resultado) => {
+    let [nro, res] = resultado.split('#');
     if (+nro) {
-        let linea = lineas[nro]
-        let i = linea.indexOf('//>')
-        lineas[nro] = rellenar(linea.slice(0, i), 40) + '//> ' + (borrar ? '' : res.trim())  
+        let i = lineas[nro].indexOf('//>');
+        lineas[nro] = `${lineas[nro].slice(0, i).padEnd(ancho, ' ')}//> ${res}`;
     }
 }
 
-let lineas = leer(origen)
+const procesarArchivo = async (origen) => {
+    let temporal = origen.replace('.js', '.tmp.js');
+    let lineas = leer(origen);
+    
+    escribir(temporal, lineas.map(convertir))
+    exec(`bun ${temporal}`, (_, salida) => {
+        let resultados = salida.split(/\r\n|\n|\r/);
+        resultados.forEach(resultado => revertir(lineas, resultado));
+        escribir(origen, lineas);
+        borrar(temporal)
+    });
+}
 
-let borrar = lineas.includes('//-')
-lineas = lineas.map( x => x == '//-' ? "" : x )
-
-escribir(temporal, lineas.map(convertir))
-
-exec(`bun ${temporal}`, (_, salida) => {
-    let resultados = salida.split(/\r\n|\n|\r/) 
-    resultados.forEach(resultado => revertir(lineas, resultado, borrar))
-    escribir(origen, lineas)
-})
+let origen = process.argv[2];
+procesarArchivo(origen);

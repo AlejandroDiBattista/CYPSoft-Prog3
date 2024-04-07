@@ -1,7 +1,7 @@
 /// Valores lógicos o Booleanos ///
 
 let a = true
-typeof(a)
+typeof a
 
 a = 1 > 2 
 
