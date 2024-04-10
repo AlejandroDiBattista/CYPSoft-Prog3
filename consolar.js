@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { exec } from 'child_process';
 
-let ancho = 40
+let ancho = 25
 const leer = origen => fs.readFileSync(origen, 'utf8').split(/\r\n|\n|\r/);
 const escribir = (destino, lineas) => fs.writeFileSync(destino, lineas.join('\r\n'), 'utf8');
 const borrar = origen => fs.unlinkSync(origen);
