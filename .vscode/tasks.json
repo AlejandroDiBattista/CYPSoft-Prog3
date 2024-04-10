@@ -4,13 +4,19 @@
         {
             "label": "consolar",
             "type": "shell",
-            "command": "C:/Users/luisb/Documents/GitHub/prog3/evaluar.bat",
+            "command": "${workspaceFolder}/evaluar.bat",
             "args": [
                 "${file}"
             ],
             "presentation": {
-                "reveal": "never",
+                "reveal": "never"
             }
+        },
+        {
+            "type": "Live Preview",
+            "workspacePath": "c:\\Users\\administrator\\Documents\\GitHub\\prog3",
+            "problemMatcher": [],
+            "label": "Live Preview: Ejecutar servidor"
         }
     ]
 }
