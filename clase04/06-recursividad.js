@@ -8,37 +8,55 @@
 // 0! = 1
 
 function factoreal(num) {
-    if (num === 0) {
-        return 1;
-    }
+    if (num === 0) return 1;
     return num * factoreal(num - 1);
 }
 
 console.log(factoreal(9));
 console.log(factoreal(5));
 
-let x = 118;
+let numeroSecreto = 118;
 
-function adivinar(min, max) {
+function adivinar(min=0, max=999) {
     let numero = (min + max) / 2 
-    if (numero === x) {
-        return true
+    if (min === max) {
+        return min
     }
-    if (numero < x)
-        return adivinar(min, numero)
-    else 
+    if (numero < numeroSecreto)
+        return adivinar(min, numero-1)
+    else // numero es >= x
         return adivinar(numero, max)
 }
 
-console.log(adivinar(0, 1000));
+let estimacion = adivinar(0, 999)
+console.log(`Estimo que el número secreto es ${estimacion}`);
 
-function ordenar(lista, min, max) {
-    if (min === max) {
-        return [lista[min]]
+// Función para ordenas un array
+//   Toda una lista, la divide en dos mitades
+//   Luego combina los dos mitades  
+//   compiando siempre el elemento menor de cada mitad
+
+function ordenar(lista, min=0, max=lista.length-1) {
+    function combinar(izq, der) {
+        let i = 0, j = 0, resultado = []
+        while(i < izq.length && j < der.length) {
+            if (izq[i] < der[j]) {                
+                resultado.push(izq[i++])
+            } else {
+                resultado.push(der[j++])
+            }
+        }
+        while (i < izq.length) resultado.push(izq[i++])
+        while (j < der.length) resultado.push(der[j++])
+
+        return resultado
     }
-    let mitad = Math.floor((min + max) / 2)
-    let izq = ordenar(lista, min, mitad)
-    let der = ordenar(lista, mitad + 1, max)
-    return merge(izq, der)
 
+    if (min === max) return [lista[min]]    // Una lista de un solo elemento esta ordenada
+    
+    let mitad = Math.floor((min + max) / 2) // divide a la mitades
+    let izq = ordenar(lista, min, mitad)        // ordena la primera mitad
+    let der = ordenar(lista, mitad + 1, max)    // ordena la segunda mitad
+    return combinar(izq, der)               // combina las dos mitades
 }
+

@@ -6,46 +6,56 @@ for (let i = 0; i < numeros.length; i++) {
     console.log(x)
 }
 
+// Recorrer un array con for( in ) me da las "claves" del array => "0", "1", "2", "3", "4", "5", "6", "7", "8
 for (let x in numeros) {
     console.log(x)
 }
 
-// Sumar los elementos de un array
-let s = 0 
+// Recorrer con for( of ) me da los "valores" del array => 1, 2, 3, 4, 5, 6, 7, 8, 9
 for (let x of numeros) {
-    s += x
+    console.log(x)
 }
-console.log(s)
+
+/// Algunos ejemplos clásicos de operaciones con arrays
+
+// Sumar los elementos de un array
+let suma = 0 
+for (let x of numeros) {
+    suma += x
+}
+console.log(suma)
 
 // Multiplicar los elementos de un array
-let m = 1 
+let producto = 1 
 for (let x of numeros) {
-    m *= x
+    producto *= x
 }
-console.log(m)
+console.log(producto)
 
 // Encontrar el menor de los elementos de un array
-let min = Infinity
+let minimo = Infinity
 for (let x of numeros) {
-    if (x < min) {
-        min = x
+    if (x < minimo) {
+        minimo = x
     }
 }
-console.log(min)
+console.log(minimo)
 
 // Contar los elementos de un array
-let c = 0
+let contador = 0
 for (let x of numeros) {
     c++
 }
 console.log(c)
 console.log(numeros.length)
 
+// Copiar un array
 let copia = []
 for (let x of numeros) {
     copia.push(x)
 }
 
+// Una funcion que nos permita encontrar el minimo de un array
 function minimo(lista) {
     let min = Infinity
     for (let x of lista) {
