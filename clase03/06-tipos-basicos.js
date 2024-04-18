@@ -22,29 +22,31 @@ s = "100" + 10  // Débil
 */
 
 // Conversion de tipos
-n = Number(100)
-n = Number('100')
-n = Number(true)
-n = Number([])
-n = Number({})
+n = Number(100)           //> 100
+n = Number('100')         //> 100
+n = Number(true)          //> 1
+n = Number([])            //> 0
+n = Number([1])           //> 1
+n = Number([1,2])         //> NaN
+n = Number({})            //> NaN
 
-s = String(10)
-s = String(true)
-s = String(null)
-s = String([])
-s = String({})
+s = String(10)            //> "10"
+s = String(true)          //> "true"
+s = String(null)          //> "null"
+s = String([])            //> ""
+s = String({})            //> "[object Object]"
 
-b = Boolean(true)
-b = Boolean(1)
-b = Boolean(0)
-b = Boolean('')
-b = Boolean('false')
-b = Boolean('a')
-b = Boolean({})
+b = Boolean(true)         //> true
+b = Boolean(1)            //> true
+b = Boolean(0)            //> false
+b = Boolean('')           //> false
+b = Boolean('false')      //> true
+b = Boolean('a')          //> true
+b = Boolean({})           //> true
 
 s = 100
-s = '100' + 2
-n = '100' - 2
+s = '100' + 2             //> '1002'
+n = '100' - 2             //> 98
 
 // Como de define un Numero
 n = 100            // Entero

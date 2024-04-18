@@ -10,7 +10,7 @@ let sumar1 = function(a, b) {
     return a + b;
 }
 
-// Función como expresión con flecha gorda
+// Función como expresión con 'flecha gorda'
 let sumar2 = (a, b) => {
     return a + b;
 }
@@ -32,7 +32,7 @@ let a = Mate.sumar
 let b = Mate.restar(1, 2); // -1
 
 const Consola = {
-    mostrar: (mensaje) => console.log(mensaje),
+    mostrar:  (mensaje) => console.log(mensaje),
     informar: (mensaje) => console.info(mensaje),
 }
 
