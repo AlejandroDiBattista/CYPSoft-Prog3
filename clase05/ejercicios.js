@@ -29,7 +29,7 @@ function modificarProducto(productos, idProducto, datosNuevos) {
     );
 }
 
-// Ejemplo de uso de las funciones
+// --- Ejemplo de uso de las funciones ---
 
 // Eliminar el producto con ID 3
 productos = eliminarProducto(productos, 3);

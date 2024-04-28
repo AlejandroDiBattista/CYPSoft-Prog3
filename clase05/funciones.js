@@ -7,6 +7,12 @@ let figura = [
     { x:  1, y: 4},
 ]
 
+// Mostrar los puntos de la figura
+for(let i=0; i < figura.length; i++){
+    let punto = figura[i]
+    console.log("Punto: ", punto)
+}
+
 let minimo = Infinity
 for(let i=0; i < figura.length; i++){ //Recorro
     let punto = figura[i]; // Tomo el punto
@@ -15,13 +21,6 @@ for(let i=0; i < figura.length; i++){ //Recorro
     }
 }
 console.log("El minimo es: ", minimo)
-
-let precios = [100, 200, 300, 400, 500]
-let total = 0
-for(let i=0; i < precios.length; i++){
-    let precio = precios[i]
-    total = total + precio
-}
 
 let maximo = -Infinity
 for(let i=0; i < figura.length; i++){
@@ -32,10 +31,12 @@ for(let i=0; i < figura.length; i++){
 }
 console.log("El maximo es: ", maximo)
 
-// Mostrar los puntos de la figura
-for(let i=0; i < figura.length; i++){
-    let punto = figura[i]
-    console.log("Punto: ", punto)
+let precios = [100, 200, 300, 400, 500]
+
+let total = 0
+for(let i=0; i < precios.length; i++){
+    let precio = precios[i]
+    total = total + precio
 }
 
 let suma = 0
@@ -54,10 +55,15 @@ for(let producto of productos){
         console.log("Producto: ", producto)
     }
 }
+let contador = 0
+for(let letra of "(1 + 2 * (3 + 4)"){
+    if(letra === "(") contador++
+    if(letra === ")") contador--
+    if(contador < 0) break
+}
+if(contador === 0) console.log("Los parentesis están balanceados")
 
-for(let letra of "(1 + 2 * (3 + 4)")
-
-let mayor = 0
+let mayor = -Infinity
 let masCaro = null
 for(let producto of productos){
     if(producto.precio > mayor){
@@ -76,7 +82,6 @@ for(let producto of productos){
         masBarato = producto
     }
 }
-
 
 for(let n=10; n <= 15;n++){ // Sumar numeros del 10 al 15 (incluido)
     suma = suma + n

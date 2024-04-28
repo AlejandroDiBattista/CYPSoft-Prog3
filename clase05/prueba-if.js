@@ -73,5 +73,3 @@ let m3 = minimo4(1, 20, 3, 4, 5)
 
 
 console.log("El minimo es: ", minimo(a,b))
-
-
