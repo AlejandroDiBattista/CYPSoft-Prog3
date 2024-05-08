@@ -21,7 +21,8 @@
 
     const Agenda = ({ contactos }) =>
       <ul>
-        {contactos.map(c => <Contacto contacto={c} />)}
+        // {contactos.map(c => <Contacto contacto={c} />)}
+        {contactos.map(c => Contacto(c))}
       </ul>
 
     ReactDOM.render(<Agenda contactos={contactos} />, document.getElementById('root'));

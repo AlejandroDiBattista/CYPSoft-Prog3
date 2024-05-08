@@ -17,11 +17,12 @@
 
     const Agenda = (contactos) =>
       `<ul>
-            ${contactos.map(c => Contacto(c)).join('\n')}
-         </ul>`
+          ${contactos.map(c => Contacto(c)).join('\n')}
+       </ul>`
 
     const instalar = () => {
-      document.getElementById('root').innerHTML = Agenda(contactos);
+      const root = document.getElementById('root')
+      root.innerHTML = Agenda(contactos);
     }
 
     window.onload = instalar;

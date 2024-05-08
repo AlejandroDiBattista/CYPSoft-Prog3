@@ -16,7 +16,8 @@
       let li = document.createElement('li')
       let text = document.createTextNode(`${nombre} `)
       let bold = document.createElement('b')
-      bold.textContent = apellido
+      let text1 = document.createTextNode(`${apellido}`)
+      bold.appendChild(text1)
       li.appendChild(text)
       li.appendChild(bold)
       return li
@@ -28,8 +29,13 @@
       return ul
     };
 
-    document.body.appendChild(Agenda(contactos))
-  </script>
+    function instalar() {
+      const root = document.getElementById('root')
+      root.appendChild(Agenda(contactos))
+    }
+
+    window.onload = instalar;
+</script>
 </head>
 
 <body>
