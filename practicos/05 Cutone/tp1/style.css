@@ -1,8 +1,45 @@
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: #ffff;
+    font-family: fond;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+/* styles.css */
+
+h1 {
+    text-align: center;
+    color: #8b0f0f;
+
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-card {
+    margin-left: 50px;
+    background-color: #f9dbdb;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    text-align: start;
+}
+
+.contact-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #8b0f0f;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    color: #8b0f0f;
 }
