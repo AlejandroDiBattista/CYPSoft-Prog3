@@ -4,11 +4,11 @@ function Tarjeta({ id, nombre, apellido, telefono }) {
   };
 
   return (
-    <div className="tarjeta" onClick={mostrarAlerta}>
-      <div className="nombre">
-        {nombre} {apellido}
+    <div className="contact-card" onClick={mostrarAlerta}>
+      <div className="contact-info">
+        <h2>{nombre} {apellido}</h2>
+        <p><strong>Teléfono:</strong> {telefono}</p>
       </div>
-      <div className="telefono">{telefono}</div>
       <span className="icono-llamada">☎</span>
     </div>
   );
@@ -30,13 +30,15 @@ function Agenda() {
   ];
 
   return (
-    <div className="agenda">
+    <div className="contact-list">
+      <h1>Agenda de Contactos</h1>
       {contactos.map((contacto) => (
         <Tarjeta key={contacto.id} {...contacto} />
       ))}
     </div>
   );
 } 
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Agenda />);
