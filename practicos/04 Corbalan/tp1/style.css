@@ -1,8 +1,32 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #4bddf0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 20px;
+}
+h1{
+    font-family: Forum;
+    text-decoration: underline ;
+}
+li{
+    text-decoration: none;
+    color: blue;
+    border: grey 3px solid ;
+    border-radius: 15px;
+    margin-right: 800px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-image: url('https://crehana-blog.s3.amazonaws.com/media/filer_public/be/22/be220975-5eb2-42c5-b576-b993fae6601b/fondos-tarjetas-presentacion2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: inherit;
+}
+li:hover{
+    font-size: 28px;
+    border:black 3px solid;
+}
+ul{
+    list-style: none;
 }
