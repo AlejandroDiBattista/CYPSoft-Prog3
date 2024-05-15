@@ -25,12 +25,17 @@ h1 {
 .contact-card {
     margin-left: 50px;
     background-color: #f9dbdb;
-    border: 1px solid #ff0000;
+    border: 1px solid #8b0f0f;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 200px;
     text-align: start;
+    transition: transform 0.6s ease
+}
+
+.contact-card:hover{
+    transform: translateY(-5px);
 }
 
 .contact-card h3 {
