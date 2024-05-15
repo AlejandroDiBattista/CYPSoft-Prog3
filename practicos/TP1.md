@@ -1,15 +1,13 @@
-# Trabajo Práctico 2
+# Trabajo Práctico 1
 
 
 ## ReactJS
 
 ### Funcionalidad requerida
 
-Realizar una aplicacion web usando react que me permita mostrar una agenda de contactos (nombre, apellido, telefono) 
-Los contactos deben poder ser marcado/desmarcado como favorito.
-El listado debe estar ordenando alfabeticamente por apellido y nombre. 
-Los contactos marcados como favoritos deben mostrarse primero
-La aplicacion debe hacerse en un unico archivo automomo que incorpore la libreria react y babel
+El trabajo consiste en mostrar una Agenda como una lista de tarjetas personales.
+Debe mostrar 10 Contactos con Nombre, Apellido y Teléfono
+
 ### Instrucciones para la presentación del trabajo:
 
 **USANDO GitHub Desktop**
