@@ -1,0 +1,54 @@
+body {
+    background-color: #f0f0d0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+    p {
+        margin: 5px;
+        i {
+            font-size: 8px;
+        }
+    }
+    text-align: right;
+    button {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+    position: relative; /* Para que la estrella se posicione correctamente */
+}
+
+/* Pone la estrella en la esquina superior */
+.favorito { 
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+}
+
+.nombre {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 8px;
+    height: 24px;
+}
+
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
