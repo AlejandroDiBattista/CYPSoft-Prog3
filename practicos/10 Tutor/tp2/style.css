@@ -1,0 +1,77 @@
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  line-height: 1.6;
+}
+
+/* Estilos para el título */
+h1 {
+  margin: auto;
+}
+
+/* Estilos para la lista de contactos */
+.agenda {
+  cursor: pointer;
+}
+
+/* Estilos para las tarjetas de contacto */
+.tarjeta {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  margin-right: 75%;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el nombre del contacto */
+.nombre {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos para el icono de llamada */
+.icono-llamada:hover {
+  color: #2e7d32;
+}
+
+.icono-llamada {
+  color: #4caf50;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Estilos para la información del contacto */
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el botón de favorito */
+.favorito-btn {
+  background: none;
+  border: none;
+  font-size: 1.9em;
+  cursor: pointer;
+}
+.favorito {
+  color: gold;
+}
+.no-favorito {
+  color: gray;
+}
