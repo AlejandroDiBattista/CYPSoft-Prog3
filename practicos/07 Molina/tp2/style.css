@@ -1,0 +1,81 @@
+:root {
+    --background-color: #8786c3;
+    --card-background-color: #abafab;
+    --primary-font-family: Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 12px;
+    --font-size-large: 24px;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --primary-text-color: #a74902;
+    --secondary-text-color: #0a0608;
+    --button-background-color: #bdcee4;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--primary-font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--font-size-base);
+    color: var(--primary-text-color);
+}
+
+.card {
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 15px;
+    padding: 15px;
+    width: 220px;
+    position: relative;
+    text-align: left;
+    color: var(--primary-text-color);
+    border: 1px solid var(--secondary-text-color);
+    transition: box-shadow 0.3s; /* Agregamos transición para el sombreado */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Nuevo sombreado al hacer hover */
+}
+
+.card button {
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    padding: 8px 12px;
+    background-color: var(--button-background-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card button:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+    margin: 8px 0;
+    font-size: var(--font-size-small);
+    color: var(--secondary-text-color);
+}
+
+.card p i {
+    font-size: var(--font-size-small);
+}
+
+.nombre {
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 12px;
+    height: 28px;
+}
+
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

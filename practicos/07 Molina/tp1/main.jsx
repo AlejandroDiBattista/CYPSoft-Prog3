@@ -1,7 +1,7 @@
 // practicos/ Molina/tp1/main.jsx
 
 function App() {
-    let contactos = [
+    const contactos = [
         { id: 1, nombre: 'Juan', apellido: 'Pérez', telefono: "3816224395" },
         { id: 2, nombre: 'Ana', apellido: 'Gómez', telefono: "3816224395" },
         { id: 3, nombre: 'Pedro', apellido: 'García', telefono: "3816224395" },
