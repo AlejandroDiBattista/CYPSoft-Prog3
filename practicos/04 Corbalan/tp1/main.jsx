@@ -19,7 +19,7 @@ function Contacto({id, nombre, apellido, telefono, favorito, alCambiar }){
                         <button onClick={marca}>{favorito ? "Desmarcar favorito": "Favorito"}</button>
                     </li>
             
-            </ul> 
+            </ul>       
         </div>
     );
 }
@@ -50,10 +50,20 @@ function App() {
         setPersona(copiar)
     }
 
+    const ordenAlfa = () => {
+        let contactosOrdenados = [...contactos].sort((a,b) => {
+            if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+            if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+            return 0;
+        });
+        setPersona(contactosOrdenados)
+    }
+
     persona.sort(ordenFavoritos)
     return (
         <div>
             <h1>Contactos</h1>
+            <button onClick={ordenAlfa}>Ordenar</button> 
             {persona.map(contacto => <Contacto key={contacto.id} {...contacto} alCambiar={cambio} />)}
         </div>
     )
