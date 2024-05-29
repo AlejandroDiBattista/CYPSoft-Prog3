@@ -13,7 +13,6 @@ function Editar({ contacto, setContacto }) {
     return (
         <Tarjeta>
             <form>
-
                 <h2>Editar contacto</h2>
                 <label>Nombre</label>
                 <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} />

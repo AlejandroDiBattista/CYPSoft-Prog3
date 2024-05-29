@@ -3,22 +3,19 @@ const { useState } = React
 function Contacto({id, nombre, apellido, telefono, favorito, alCambiar }){
     let marca = (e)=>{
         alCambiar(id, !favorito)
-        console.log('marcamos a ' + nombre + 'como' + favorito)
+        console.log(`marcamos a ${nombre} como ${favorito}`)
     }
 
     return(
         <div>
             <ul>
-
-                
-                    <li key={id}>
-                        <span className="favorito">{favorito && "⭐"}</span>
-                        <p><b>Nombre:</b> {nombre}</p>
-                        <p><b>Apellido:</b> {apellido}</p>
-                        <p><b>Telefono:</b> {telefono}</p>
-                        <button onClick={marca}>{favorito ? "Desmarcar favorito": "Favorito"}</button>
-                    </li>
-            
+                <li key={id}>
+                    <span className="favorito">{favorito && "⭐"}</span>
+                    <p><b>Nombre:</b> {nombre}</p>
+                    <p><b>Apellido:</b> {apellido}</p>
+                    <p><b>Telefono:</b> {telefono}</p>
+                    <button onClick={marca}>{favorito ? "Desmarcar favorito": "Favorito"}</button>
+                </li>
             </ul>       
         </div>
     );
@@ -27,7 +24,6 @@ function Contacto({id, nombre, apellido, telefono, favorito, alCambiar }){
 function ordenFavoritos(a, b) {
     return a.favorito === b.favorito ? 0 : a.favorito ? -1 : 1
 }
-
 
 function App() {
     const contactos = [
@@ -67,12 +63,7 @@ function App() {
             {persona.map(contacto => <Contacto key={contacto.id} {...contacto} alCambiar={cambio} />)}
         </div>
     )
-
-
-    
 }
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<App />)
