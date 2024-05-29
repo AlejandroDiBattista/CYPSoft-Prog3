@@ -10,6 +10,7 @@ h1{
     font-family: Forum;
     text-decoration: underline ;
 }
+
 li{
     text-decoration: none;
     color: blue;
@@ -29,4 +30,18 @@ li:hover{
 }
 ul{
     list-style: none;
+}
+button{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+button:hover{
+    background-color: grey;
+}
+span{
+    margin-right: 500px;
 }
