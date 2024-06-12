@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Enlaces a React, ReactDOM y Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Prueba Fetch</title>
+
+    <script type="text/babel">
+        const { createRoot } = ReactDOM
+        const { useState, useEffect } = React
+
+        const App = () => {
+
+            function bajarPromesa() {
+                fetch("/bajar")
+                    .then((response) => {
+                        console.log(response)
+                        return response.json()
+                    }).then((data) => {
+                        console.log(data)
+                    })
+            }
+
+            async function bajar() {
+                let response = await fetch("/bajar")
+                let data = await response.json()
+            }
+
+            async function subir() {
+                let res = await fetch("/subir", {
+                    method: 'POST',
+                    headers: {
+                        'mi-token': '123',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nombre: 'Juan', apellido: "Diaz" })
+                })
+                let data = await res.json()
+                console.log(data)
+            }
+
+            return (
+                <>
+                    <h1>Usando FETCH</h1>
+                    <ul>
+                        <li>
+                            <button onClick={bajar}>Bajar</button>
+                        </li>
+                        <li>
+                            <button onClick={subir}>Subir</button>
+                        </li>
+                    </ul>
+                </>
+            )
+        }
+
+        const root = createRoot(document.getElementById('root'))
+        root.render(<App />);
+    </script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
