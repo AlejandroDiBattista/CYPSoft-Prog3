@@ -1,0 +1,28 @@
+@host = http://localhost:3000
+
+### Listar usuarios
+GET {{host}}/usuarios
+
+### Registrar
+POST {{host}}/registrar
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "12345"
+}
+
+### Login
+PUT {{host}}/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "12345"
+}
+
+### Logout
+PUT {{host}}/logout
+
+### Info
+GET {{host}}/info

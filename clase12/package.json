@@ -1,0 +1,19 @@
+{
+  "name": "clase12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servidor.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-localstorage": "^3.0.5"
+  }
+}

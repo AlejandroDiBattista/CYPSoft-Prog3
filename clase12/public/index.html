@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrar(data){
+            console.log("Data", data);
+            document.getElementById('resultado')
+                .innerText = JSON.stringify(data, null, 2);
+        }
+
+        function traer(){
+            fetch('http://localhost:3000/saludar')
+                .then(response => response.json())
+                .then(mostrar)
+        }
+    </script>
+    <h1>Fetch desde index.html</h1>
+    <button onclick="traer()">Traer</button>
+    <pre id="resultado"></pre>
+</body>
+</html>
