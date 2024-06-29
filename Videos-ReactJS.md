@@ -15,3 +15,6 @@ https://youtu.be/rYLy6VBBivw
 
 ### 5. Ejemplo de ABM de Contactos
 https://youtu.be/GBcBm-MU9hY
+
+### 6. Ejemplo Agenda fullstack (React+Express+MongoDB)
+https://youtu.be/-YUeJ6656q4
