@@ -8,8 +8,6 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, './public')));
 
-
-
 //Mostrar todas las personas
 app.get('/Hotel/personas', async (req, res) => {
     try {

@@ -9,6 +9,7 @@ async function llamar(ruta, metodo='GET', datos={}) {
         method: metodo,
         headers: { 'Content-Type': 'application/json' }
     }
+
     if (metodo !== 'GET') {
         opciones.body = JSON.stringify(datos)
     }
