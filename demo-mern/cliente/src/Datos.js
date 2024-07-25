@@ -1,6 +1,7 @@
-// GET /contactos           | Listar > Trae todos contactos
-// POST /contactos          | Agregar > Agrega un contacto
-// DELETE /contactos/:id    | Borra > Borrar un contacto
+// GET /contactos        | Listar  > Trae todos contactos
+// POST /contactos       | Agregar > Agrega un contacto
+// PUT /contactos/:id    | Cambiar > Cambiar un contacto
+// DELETE /contactos/:id | Borra   > Borrar un contacto
 
 const base = "http://localhost:3000"
 
@@ -26,8 +27,12 @@ async function agregar(contacto) {
     await llamar("/contactos", "POST", contacto)
 }
 
+async function cambiar(id, contacto) {
+    await llamar(`/contactos/${id}`, "PUT", contacto)
+}
+
 async function borrar(id) {
     await llamar(`/contactos/${id}`, "DELETE")
 }
 
-export default { listar, agregar, borrar }
+export default { listar, agregar, cambiar, borrar }
