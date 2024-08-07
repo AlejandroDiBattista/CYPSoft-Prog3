@@ -1,45 +1,45 @@
 # Agenda
 
-- Acevedo, Agustina
+- **Acevedo**, Agustina
   * teléfono: (381) 608-6560
   * email: acevedoagustina2020@gmail.com
 
-- Aguilar, Lucas
+- **Aguilar**, Lucas (Grupo A)
   * teléfono: (381) 529-1310
   * email: laguilarlucas051@gmail.com
 
-- Andrada, Pablo
+- **Andrada**, Pablo (Grupo B)
   * teléfono: (381) 216-3492
   * email: pabloandrada280@gmail.com
 
-- Corbalán, Joel
+- **Corbalán**, Joel
   * teléfono: (381) 674-9586
   * email: joelcor87@gmail.com
 
-- Cutone, Nicolas
+- **Cutone**, Nicolas (Grupo A)
   * teléfono: (381) 664-3032
   * email: nico44919323@gmail.com
 
-- Jaimez, Marcelo Josué
+- **Jaimez**, Marcelo Josué** (Grupo C)
   * teléfono: (381) 326-3707
   * email: jaimezmarcelojosue@gmail.com
 
-- Molina, Victor
+- **Molina**, Victor
   * teléfono: (381) 622-4395
   * email: molinavictor_03@yahoo.com.ar
 
-- Tutor, Diego
+- **Tutor**, Diego (Grupo C)
   * teléfono: (381) 694-0503
   * email: benjatutor12@gmail.com
 
-- Vizcarra, Facundo
+- **Vizcarra**, Facundo
   * teléfono: (381) 301-8417
   * email: facundodjvizcarra@gmail.com
 
-- Romano Juarez, Jhonatan Nicolas
+- **Romano Juarez**, Jhonatan Nicolas (Grupo B)
   * teléfono: (381) 620-0280
   * email: jhonatanicolas327@gmail.com
 
-- Segura, Benjamin
+- **Segura**, Benjamin (Grupo B)
   * teléfono: (381) 220-8026
   * email: benjasegura1@gmail.com

@@ -1,3 +1,7 @@
 {
-    "workbench.settings.openDefaultKeybindings": true
+    "workbench.settings.openDefaultKeybindings": true,
+    "editor.fontSize": 12,
+    "screencastMode.fontSize": 50,
+    "debug.console.fontSize": 14,
+    "markdown.preview.fontSize": 12
 }
