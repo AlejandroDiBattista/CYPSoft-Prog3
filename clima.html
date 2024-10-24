@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta el Clima</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/picocss@latest/pico.min.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const WeatherApp = () => {
+      const [city, setCity] = useState('');
+      const [weather, setWeather] = useState(null);
+      const [error, setError] = useState(null);
+
+      const API_KEY = 'bd09a10075d27a3eadc70053e49fe258';
+
+      const fetchWeather = async () => {
+        if (city === '') {
+          setError('Por favor ingrese una ciudad.');
+          return;
+        }
+        setError(null);
+        try {
+          const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+          );
+          if (!response.ok) {
+            throw new Error('No se pudo encontrar la ciudad especificada.');
+          }
+          const data = await response.json();
+          setWeather(data);
+        } catch (err) {
+          setError(err.message);
+          setWeather(null);
+        }
+      };
+
+      return (
+        <div className="container">
+          <h1>Consulta el Clima</h1>
+          <input
+            type="text"
+            placeholder="Ingresa una ciudad"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button onClick={fetchWeather}>Consultar</button>
+          {error && <p className="error">{error}</p>}
+          {weather && (
+            <article>
+              <h2>{weather.name}</h2>
+              <p>Temperatura: {weather.main.temp} °C</p>
+              <p>Humedad: {weather.main.humidity} %</p>
+              <p>Clima: {weather.weather[0].description}</p>
+            </article>
+          )}
+        </div>
+      );
+    };
+
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<WeatherApp />);
+  </script>
+</body>
+</html>
